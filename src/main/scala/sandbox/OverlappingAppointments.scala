@@ -13,7 +13,7 @@ object OverlappingAppointments extends App {
     val initMap = appointments.map(a => (a, false)).toMap
 
     def compareTimeToAppt(time: Int, appt: (Int, Int)): Status = {
-      if (time < appt._1) Before
+      if (time <= appt._1) Before
       else if (time < appt._2) During
       else After
     }
